@@ -1,4 +1,5 @@
 # GAwLL
+This repository contains the source code for running the Genetic Algorithm with Linkage Learning (GAwLL) for the Wrapper Feature Selection Problem. 
 *** Genetic Algorithm with Linkage Learning (GAwLL) for the Wrapper Feature Selection Problem  ***
 
 Description: This is the source code for running GAwLL in the feature selection problems described in the paper:
