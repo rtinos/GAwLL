@@ -2,7 +2,7 @@
 
 Description: This is the source code for running GAwLL in the feature selection problems described in the paper:
 
-Reference:  Tinos, R.; Przewozniczek, M.; Whitley, D. & Chicano, F. (2023). "Genetic Algorithm with Linkage Learning", Submitted to GECCO'2023.    
+Reference:  Tinos, R.; Przewozniczek, M.; Whitley, D. & Chicano, F. (2023). "Genetic Algorithm with Linkage Learning", Proc. of the 2023 Genetic and Evolutionary Computation Conference (GECCO '23), https://doi.org/10.1145/3583131.3590349.    
 
 It also includes the code for running the standard Genetic Algorithm described in the paper.
 
