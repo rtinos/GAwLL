@@ -56,7 +56,7 @@ double KNN::eucDist2(int j, double **X_testset, int i){
 \******************************************************************************/
 int KNN::modelOutput(double **X_testset, int i, int n_class){
 	int ind_min, max_c, *freq_class, *nearestNeig;
-	double *dist_i, aux_d;
+	double *dist_i, sum_dist=0.0;
 		
 	freq_class = new int[n_class+1];			// vector with frequencies of each class
 	dist_i = new double[n];						// vector with distances of training examples to the i-th example of the test set
@@ -65,19 +65,18 @@ int KNN::modelOutput(double **X_testset, int i, int n_class){
 	// finding the distances to the i-th example of the test set
 	for (int j=0;j<n;j++){
 		dist_i[j]=eucDist2(j,X_testset,i);		// distance of the j-th example of the training set to the i-th example of the test set
+		sum_dist+=dist_i[j];
 	}
 	
 	// sorting K elements of the distance vector and finding K nearest neighbors
 	for (int k=0;k<K;k++){	
-		ind_min=k;		
-		for (int j=k+1;j<n;j++){	
+		ind_min=0;
+		for (int j=1;j<n;j++){	
 			if (dist_i[j]<dist_i[ind_min])
 				ind_min=j;				
 		}
-		aux_d=dist_i[k];
-		dist_i[k]=dist_i[ind_min];
-		dist_i[ind_min]=aux_d;
-		nearestNeig[k]=ind_min; 				// k-th nearest neighbors		
+		nearestNeig[k]=ind_min; 				// k-th nearest neighbors	
+		dist_i[ind_min]=sum_dist;
 	}
 	
 	// finding the most frequent class
